@@ -1,44 +1,160 @@
+@font-face {
+    font-family: DynaPuff;
+    src: url(fonts/DynaPuff/DynaPuff-Regular.ttf);
+}
+@font-face {
+    font-family: Nunito;
+    src: url(fonts/Nunito/Nunito-Regular.ttf);
+}
+
 body {
     font-family: Arial, sans-serif;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    display: block;
     min-height: 100vh;
     margin: 0;
-    background-color: #f0f0f0;
+    background-color: rgba(239, 239, 208, 1);
 }
-
-.game-container {
-    background-color: white;
-    border-radius: 10px;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-    padding: 20px;
-    text-align: center;
-    max-width: 500px;
+.nav-bar {
+    background-color: rgba(14, 173, 105, 1);
+    display: flex;
+    height: 12vw;
+    padding-left: 4%;
+    padding-right: 4%;
+    align-items: center;
+    position: fixed;
+    top: 0;
     width: 100%;
+    z-index: 1000; /* Ensures it stays above other content */
 }
-
+.blue-monster {
+    margin-top: 5.65%;
+    margin-left: 21%;
+}
+.red-monster {
+    margin-top: 4.1%;
+    margin-left: 1.5%;
+}
+.nav-title-container {
+    width: 30vw;
+    height: 10vw;
+    margin-left: 3%;
+    padding-top: 1%;
+}
+#welcome {
+    font-size: 35px;
+    font-weight: bold;
+    font-family: DynaPuff;
+    color: rgba(239, 239, 208, 1);
+    margin-top: 4%;
+    margin-bottom: 2%;
+}
+#sub-welcome {
+    font-size: 20px;
+    font-family: Nunito;
+    color: rgba(239, 239, 208, 1);
+    margin-top: 0;
+    margin-bottom: 2%;
+}
+.progress-bar {
+    width: 30vw;
+    border-radius: 10px;
+    background-color: rgba(238, 66, 102, 1);
+    height: 1.5vw;
+    margin-bottom: 1.5%;
+}
+.game-body {
+    display: flex;
+    width: 100%;
+    height: calc(100vh - 12vw); /* Takes full screen minus navbar height */
+    justify-content: center;
+    align-items: center;
+    padding-top: 12vw; /* Push content below navbar */
+}
+.game-container {
+    background-color: rgba(14, 173, 105, 1);
+    border-radius: 30px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    padding-right: 50px;
+    padding-left: 50px;
+    text-align: left;
+    width: 620px;
+    height: 500px;
+}
+#game-title {
+    font-size: 55px;
+    font-family: DynaPuff;
+    color: rgba(239, 239, 208, 1);
+    margin-top: 15px;
+    margin-bottom: 0;
+}
 .game-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
     margin-bottom: 20px;
 }
-
+#game-sub {
+    font-size: 30px;
+    font-family: Nunito;
+    color: rgba(239, 239, 208, 1);
+    margin-top: 10px;
+    margin-bottom: 100px;
+}
+.game-body2 {
+    display: flex;
+    height: calc(100vh - 12vw); /* Takes full screen minus navbar height */
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 12vw; /* Push content below navbar */
+    padding-right: 5.5vw;
+    padding-left: 5.5vw;
+}
+.instructions {
+    background-color:rgba(14, 173, 105, 1);
+    font-family: DynaPuff;
+    font-size: 40px;
+    margin-bottom: 10px;
+    width: 25vw;
+    padding: 3vw;
+    border-radius: 30px;
+    color: rgba(255, 210, 63, 1);
+}
+#message {
+    margin-bottom: 15px;
+    color: rgba(239, 239, 208, 1);
+}
+#countdown {
+    margin-bottom: 15px;
+    color: rgba(239, 239, 208, 1);
+}
+#timer {
+    margin-bottom: 15px;
+    color: rgba(239, 239, 208, 1);
+}
+#levelInfo {
+    font-size: 20px;
+    font-family: Nunito;
+    color: rgba(239, 239, 208, 1);
+    margin-top: 0;
+    margin-bottom: 2%;
+}
 .card-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 15px;
+    gap: 1.2vw;
 }
 
 .card {
     aspect-ratio: 1/1;
-    background-color: #e0e0e0;
-    border-radius: 10px;
+    background-color: rgba(84, 13, 110, 1);
+    width: 11.5vw;
+    height: 11.5vw;
+    border-radius: 20px;
+    font-size: 100px;
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 48px;
     cursor: pointer;
     transition: all 0.3s ease;
 }
@@ -52,26 +168,29 @@ body {
     border: 2px solid #cccccc;
 }
 
-#message {
-    margin-bottom: 15px;
-    color: #666;
-}
-
 button {
-    background-color: #4CAF50;
+    background-color: rgba(255, 210, 63, 1);
     border: none;
-    color: white;
+    color: rgba(84, 13, 110, 1);
     padding: 10px 20px;
     text-align: center;
     text-decoration: none;
     display: inline-block;
-    font-size: 16px;
+    font-size: 30px;
+    font-family: DynaPuff;
     margin: 4px 2px;
     cursor: pointer;
-    border-radius: 5px;
+    border-radius: 20px;
     transition: background-color 0.3s ease;
+    font-weight: bold;
 }
 
 button:hover {
-    background-color: #45a049;
+    color: rgba(239, 239, 208, 1);
+}
+#finalScore {
+    font-family: DynaPuff;
+    font-size: 30px;
+    margin-bottom: 15px;
+    color: rgba(239, 239, 208, 1);
 }
